@@ -1,6 +1,7 @@
 var equa = document.getElementById("equacao")
 var join_plus = ""
 
+
 function insert (number) { 
     
     document.getElementById("equacao").value =  `${join_plus}` + `${number}`

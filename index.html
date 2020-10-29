@@ -16,7 +16,7 @@
     <div class="main">
         <div class="calc-box">
             <div class="calc-tela">
-                <input type="tel" maxlength="8" id="equacao">
+                <input type="tel" maxlength="8" id="equacao" readonly="true">
             </div>
 
             <div class="buttons-box">
@@ -50,7 +50,11 @@
 
             </div>
 
-            <div class="limpar" onclick="limpar()">LIMPAR</div>
+            <div class="limpar" onclick="limpar()">
+                LIMPAR
+                <div class="buttons-div nums" onclick="insert(6)">6</div>
+            </div>
+            
         </div>
     </div>
     <script type="text/javascript" src="./script.js"></script>
