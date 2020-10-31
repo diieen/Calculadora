@@ -18,22 +18,21 @@ function calcular () {
 
     for (var i = 0; i <= array.length; i++) {
 
-        if (array[i] >= 0 || array[i] <= 9 || array[i] == '.') {
+            if (array[i] >= 0 || array[i] <= 9 || array[i] == '.') {
 
-            if (join[x] != null) {
-                join[x] = join[x] + `${array[i]}`
+                if (join[x] != null) {
+                    join[x] = join[x] + `${array[i]}`
+                }
+                else {
+                    join[x] = array[i]
+                }
             }
+
             else {
-                join[x] = array[i]
-            }
-        }
-
-        else {
-            x++
-            ops[y] = array[i]
-            y++
-        }
-
+                x++
+                ops[y] = array[i]
+                y++
+            }         
     }
 
     var resultado = parseFloat(join[0])
@@ -64,6 +63,7 @@ function calcular () {
 
     }
     console.log(resultado)
+    
     document.getElementById("equacao").value = resultado
     join_plus = resultado
 
@@ -72,4 +72,13 @@ function calcular () {
 function limpar () {
     document.getElementById("equacao").value = ""
     join_plus = ""
+}
+
+function limp() {
+    try {
+    document.getElementById("equacao").value = join_plus.substr(0, join_plus.length-1)
+    join_plus = join_plus.substr(0, join_plus.length-1)
+    } catch {
+        limpar()
+    }
 }
